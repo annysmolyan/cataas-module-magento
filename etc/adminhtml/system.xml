@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the GNU General Public License v3 (GPL 3.0)
+ * It is also available through the world-wide-web at this URL:
+ * https://www.gnu.org/licenses/gpl-3.0.en.html
+ *
+ * @category BelSmol
+ * @package BelSmol_CATAAS
+ * @license https://www.gnu.org/licenses/gpl-3.0.en.html GNU General Public License v3 (GPL 3.0)
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="belsmol" translate="label" sortOrder="350">
+            <label>BelSmol</label>
+        </tab>
+        <section id="cataas" translate="label" type="text" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="0">
+            <class>separator-top</class>
+            <label>CATAAS</label>
+            <tab>belsmol</tab>
+            <resource>BelSmol_CATAAS::config</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General</label>
+                <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Module Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+            <group id="api_settings" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>API settings</label>
+                <field id="api_host" translate="label" type="text" sortOrder="15" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>CATAAS API Host</label>
+                    <comment>with "/" at the end. eg. http://domain.com/</comment>
+                    <validate>validate-no-empty</validate>
+                </field>
+                <depends>
+                    <field id="cataas/general/enabled">1</field>
+                </depends>
+            </group>
+            <group id="front_settings" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Frontend Settings</label>
+                <field id="cat_text" translate="label" type="text" sortOrder="15" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Cat's Text</label>
+                    <validate>validate-no-empty</validate>
+                    <comment>The text will be shown in images</comment>
+                </field>
+                <depends>
+                    <field id="cataas/general/enabled">1</field>
+                </depends>
+            </group>
+        </section>
+    </system>
+</config>

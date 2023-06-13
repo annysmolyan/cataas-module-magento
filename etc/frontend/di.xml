@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the GNU General Public License v3 (GPL 3.0)
+ * It is also available through the world-wide-web at this URL:
+ * https://www.gnu.org/licenses/gpl-3.0.en.html
+ *
+ * @category BelSmol
+ * @package BelSmol_CATAAS
+ * @license https://www.gnu.org/licenses/gpl-3.0.en.html GNU General Public License v3 (GPL 3.0)
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- Replace product image list with CATAAS img on product_view and catalog_view pages  -->
+    <type name="Magento\Catalog\Block\Product\Image">
+        <plugin name="belsmol_cataas_product_list_image_plugin"
+                type="BelSmol\CATAAS\Plugin\Catalog\Block\Product\ImagePlugin"
+        />
+    </type>
+
+    <!-- Replace product gallery with CATAAS images (except for configurable imgs) -->
+    <type name="Magento\Catalog\Block\Product\View\Gallery">
+        <plugin name="belsmol_cataas_product_gallery_image_plugin"
+                type="BelSmol\CATAAS\Plugin\Catalog\Block\Product\View\GalleryPlugin"
+        />
+    </type>
+
+    <!-- Replace product gallery with CATAAS for configurable options on product view page -->
+    <type name="Magento\ConfigurableProduct\Block\Product\View\Type\Configurable">
+        <plugin name="belsmol_cataas_product_configurable_image_plugin"
+                type="BelSmol\CATAAS\Plugin\Catalog\Block\Product\View\Type\ConfigurablePlugin"
+        />
+    </type>
+
+    <!-- Replace swatches images with CATAAS on category_view page -->
+    <type name="Magento\Swatches\Controller\Ajax\Media">
+        <plugin name="belsmol_cataas_product_swatch_image_plugin"
+                type="BelSmol\CATAAS\Plugin\Swatches\Controller\Ajax\MediaPlugin"
+        />
+    </type>
+</config>

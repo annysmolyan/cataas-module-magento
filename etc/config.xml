@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the GNU General Public License v3 (GPL 3.0)
+ * It is also available through the world-wide-web at this URL:
+ * https://www.gnu.org/licenses/gpl-3.0.en.html
+ *
+ * @category BelSmol
+ * @package BelSmol_CATAAS
+ * @license https://www.gnu.org/licenses/gpl-3.0.en.html GNU General Public License v3 (GPL 3.0)
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <cataas>
+            <general>
+                <enabled>0</enabled>
+            </general>
+            <api_settings>
+                <api_host>https://cataas.com/</api_host>
+            </api_settings>
+            <front_settings>
+                <cat_text>Mew!</cat_text>
+            </front_settings>
+        </cataas>
+    </default>
+</config>
